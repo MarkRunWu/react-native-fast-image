@@ -2,6 +2,7 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/SDWebImageDownloader.h>
+#import <SDWebImage/SDWebImageManager.h>
 
 // Import from the FLAnimated image CocoaPod if it's available.
 #if __has_include(<FLAnimatedImage/FLAnimatedImageView.h>)
