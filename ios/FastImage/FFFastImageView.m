@@ -15,12 +15,10 @@
     if ([[SDWebImageManager sharedManager] cacheKeyFilter] == NULL) {
         [[SDWebImageManager sharedManager] setCacheKeyFilter:^NSString * _Nullable(NSURL * _Nullable url) {
             if (url != NULL) {
-                NSString *key = url.absoluteString;
-                NSRange range = [key rangeOfString:@"?"];
-                if (range.length > 0) {
-                    return [key substringToIndex:range.location];
-                }
-                return key;
+                NSURLComponents *components = [[NSURLComponents alloc]initWithString:(url.absoluteString)];
+                components.query = NULL;
+                components.fragment = NULL;
+                return [components string];
             }
             return NULL;
         }];

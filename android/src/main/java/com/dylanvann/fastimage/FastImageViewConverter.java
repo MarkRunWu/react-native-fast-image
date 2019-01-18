@@ -28,10 +28,10 @@ class FastImageViewConverter {
                 headersBuilder.addHeader(key, value);
             }
             LazyHeaders headers = headersBuilder.build();
-            glideUrl = new GlideUrlWithNoToken(uriProp, headers);
+            glideUrl = new GlideUrlWithoutQ(uriProp, headers);
         } catch (NoSuchKeyException e) {
             // If there is no headers object.
-            glideUrl = new GlideUrlWithNoToken(uriProp);
+            glideUrl = new GlideUrlWithoutQ(uriProp);
         }
         return glideUrl;
     }
